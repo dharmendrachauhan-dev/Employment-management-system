@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function CreateTask() {
+function CreateTask({employees, setEmployees}) {
   const [formTask, setFormTask] = useState({
     taskTitle: "",
     date: "",
@@ -8,13 +8,15 @@ function CreateTask() {
     category: "",
     description: "",
   });
-
-  const [task, setTask] = useState({});
+  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormTask((prev) => ({ ...prev, [name]: value }));
   };
+
+// console.log(employees)
+
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -31,12 +33,8 @@ function CreateTask() {
       completed: false,
     };
 
-    setTask(newTask);
 
-    const data = JSON.parse(localStorage.getItem("employees"));
-    console.log(data);
-
-    const updatedEmployee = data.map((emp) => {
+    const updatedEmployee = employees.map((emp) => {
       if (formTask.assignTo == emp.name) {
         return {
           ...emp,
@@ -50,9 +48,9 @@ function CreateTask() {
       return emp;
     });
 
-    console.log(updatedEmployee)
-
-    localStorage.setItem('employees', JSON.stringify(updatedEmployee))
+   setEmployees(updatedEmployee)
+   localStorage.setItem('employees', JSON.stringify(updatedEmployee))
+   
 
     setFormTask({
       taskTitle: "",

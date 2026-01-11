@@ -1,7 +1,7 @@
 import React from 'react'
 
 function TaskListNumbers({data: {tasksCounts}}) {
-  console.log(tasksCounts.active)
+  // console.log(tasksCounts.active)
   return (
     <div className='flex mt-10 justify-between gap-5 screen'>
       <div className='px-9 py-6 w-[45%] bg-red-400 rounded-xl'>

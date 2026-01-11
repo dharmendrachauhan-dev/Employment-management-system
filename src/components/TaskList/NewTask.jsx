@@ -1,6 +1,6 @@
 
 function NewTask({data}) {
-  console.log(data)
+  // console.log(data)
   return (
     <>
       <div className="shrink-0 h-full w-75 p-5 bg-red-400 rounded-xl">

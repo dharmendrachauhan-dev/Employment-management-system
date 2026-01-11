@@ -8,7 +8,6 @@ export const AuthDataContext = createContext();
 function AuthContext({ children }) {
   const [userData, setUserData] = useState(null); // Kuch nhi hai waiting for data
 
-  setlocalStorage()
 
   useEffect(() => {
     const data = getLocalStorage();

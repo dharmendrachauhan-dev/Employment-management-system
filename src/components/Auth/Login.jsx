@@ -21,7 +21,6 @@ function Login({handleLogin}) {
   const handleForm = (e) => {
     e.preventDefault();
     handleLogin(formData.email, formData.password)
-    console.log(formData)
 
     // Reset Form
     setFormData({
